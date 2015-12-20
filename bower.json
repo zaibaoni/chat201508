@@ -1,0 +1,22 @@
+{
+  "name": "chat201508",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "zhangrenyang-t510 <zhang_renyang@>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8"
+  }
+}
