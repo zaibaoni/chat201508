@@ -1,19 +1,23 @@
 angular.module('zfpxchat').
-controller('RoomCtrl',function($scope,socket){
-    $scope.messages = [];
+controller('RoomCtrl',function($rootScope,$scope,socket){
+    $scope.room = {messages:[],users:[]};
     $scope.createMessage = function(){
         if($scope.newMessage){
-            socket.emit('createMessage',$scope.newMessage);
+            socket.emit('createMessage',{
+                content:$scope.newMessage,
+                creator:$rootScope.user,
+                creatAt:new Date()
+            });
             $scope.newMessage = '';
         }
     }
     socket.on('message.add',function(message){
-        $scope.messages.push(message);
+        $scope.room.messages.push(message);
     })
     //向服务器请求所有的消息
-    socket.emit('allMessages')
-    socket.on('allMessages',function(messages){
-        $scope.messages= messages;
+    socket.emit('room')
+    socket.on('room',function(room){
+        $scope.room= room;
     })
 
     $scope.$on('$destroy',function(){

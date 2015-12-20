@@ -2,8 +2,8 @@ var models = require('../models');
 
 exports.reg = function(req,res){
   var user = req.body;
-    models.User.findOne({username:user.username},function(err,user){
-        if(user){
+    models.User.findOne({username:user.username},function(err,dbUser){
+        if(dbUser){
             res.send({code:0,msg:'用户名已存在'});
         }else{
             new models.User(user).save(function(err,user){

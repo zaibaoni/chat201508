@@ -1,4 +1,4 @@
-angular.module('zfpxchat',['ngRoute']);
+angular.module('zfpxchat',['ngRoute','angularMoment']);
 angular.module('zfpxchat').config(function($routeProvider){
     $routeProvider.when('/',{
         templateUrl:'pages/home.html'
@@ -16,8 +16,9 @@ angular.module('zfpxchat').config(function($routeProvider){
     });
 });
 
-angular.module('zfpxchat').run(function($location,$rootScope,validator){
- validator.success(function(data){
+angular.module('zfpxchat').run(function($location,$rootScope,amMoment,validator){
+    amMoment.changeLocale('zh-cn');
+    validator.success(function(data){
      if(data['code'] == 1){
          $rootScope.user = data['user'];
          $location.path('/room');
