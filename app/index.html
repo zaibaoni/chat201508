@@ -12,13 +12,22 @@
             <a href="#/">珠峰聊天室</a>
         </div>
     </div>
+    <ul>
+        <li><a href="#/room">聊天</a></li>
+    </ul>
 </div>
-<div ng-view></div>
+<div class="container" style="margin-top:70px">
+    <div ng-view></div>
+</div>
+
 </body>
+<script src="/socket.io/socket.io.js"></script>
 <script src="/vendor/jquery/dist/jquery.js"></script>
 <script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
 <script src="/vendor/angular/angular.js"></script>
 <script src="/vendor/angular-route/angular-route.js"></script>
 <script src="/front.js"></script>
-<script src="/js/RoomCtrl.js"></script>
+<script src="/js/controller/RoomCtrl.js"></script>
+<script src="/js/service/socket.js"></script>
+<script src="/js/directive/CtrlEnterBreakLineDirective.js"></script>
 </html>

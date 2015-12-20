@@ -1,6 +1,8 @@
 angular.module('zfpxchat',['ngRoute']);
 angular.module('zfpxchat').config(function($routeProvider){
     $routeProvider.when('/',{
+        templateUrl:'pages/home.html'
+    }).when('/room',{
         templateUrl:'pages/room.html',
         controller:'RoomCtrl'
     }).otherwise({

@@ -1,5 +1,4 @@
-<div class="container" style="margin-top:70px">
-    <div class="panel panel-default">
+<div class="panel panel-default">
         <div class="panel-heading">欢迎光临珠峰聊天室</div>
         <div class="panel-body">
             <div class="list-group">
@@ -11,9 +10,8 @@
         <div class="panel-footer">
             <form action="">
                 <div class="form-group">
-                    <textarea class="form-control" ng-model="newMessage"></textarea>
+                    <textarea class="form-control" ng-model="newMessage" ctrl-enter-break-line="createMessage()"></textarea>
                 </div>
             </form>
         </div>
     </div>
-</div>
