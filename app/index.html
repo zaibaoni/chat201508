@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="zfpxchat">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-hello
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/">珠峰聊天室</a>
+        </div>
+    </div>
+</div>
+<div ng-view></div>
 </body>
+<script src="/vendor/jquery/dist/jquery.js"></script>
+<script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/vendor/angular/angular.js"></script>
+<script src="/vendor/angular-route/angular-route.js"></script>
+<script src="/front.js"></script>
+<script src="/js/RoomCtrl.js"></script>
 </html>
