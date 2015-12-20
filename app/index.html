@@ -6,21 +6,29 @@
     <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse " ng-controller="NavCtrl">
     <div class="container">
-        <div class="navbar-header">
-            <a href="#/">珠峰聊天室</a>
+        <div class="navbar-header" >
+            <span class="navbar-brand"  >珠峰聊天室</span>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active:isActive('/room')}" ng-show="user"><a href="#/room">聊天室</a></li>
+                <li ng-class="{active:isActive('/reg')}" ng-hide="user"><a href="#/reg">注册</a></li>
+                <li ng-class="{active:isActive('/login')}" ng-hide="user"><a href="#/login">登陆</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-show="user">
+                <li><a href="#" ng-click="logout()">{{user.username}}</a></li>
+            </ul>
         </div>
     </div>
-    <ul>
-        <li><a href="#/room">聊天</a></li>
-    </ul>
 </div>
-<div class="container" style="margin-top:70px">
-    <div ng-view></div>
+<div class="container" >
+    <div class="row" ng-view></div>
 </div>
 
 </body>
+<!-- zfpx:js -->
 <script src="/socket.io/socket.io.js"></script>
 <script src="/vendor/jquery/dist/jquery.js"></script>
 <script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
@@ -31,4 +39,9 @@
 <script src="/js/service/socket.js"></script>
 <script src="/js/directive/CtrlEnterBreakLineDirective.js"></script>
 <script src="/js/directive/autoScrollToBottomDirective.js"></script>
+<script src="/js/controller/RegCtrl.js"></script>
+<script src="/js/controller/LoginCtrl.js"></script>
+<script src="/js/controller/NavCtrl.js"></script>
+<script src="/js/service/validator.js"></script>
+<!-- end:js -->
 </html>
