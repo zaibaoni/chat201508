@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
 </head>
 <body>
 <div class="navbar " ng-controller="NavCtrl">
@@ -28,15 +31,21 @@
 </div>
 
 </body>
-<!-- zfpx:js -->
+
 <script src="/socket.io/socket.io.js"></script>
-<script src="/vendor/jquery/dist/jquery.js"></script>
-<script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/vendor/angular/angular.js"></script>
-<script src="/vendor/angular-route/angular-route.js"></script>
-<script src="/vendor/moment/moment.js"></script>
-<script src="/vendor/moment/locale/zh-cn.js"></script>
-<script src="/vendor/angular-moment/angular-moment.js"></script>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-route/angular-route.js"></script>
+<script src="vendor/moment/moment.js"></script>
+<script src="vendor/angular-moment/angular-moment.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
 <script src="/front.js"></script>
 <script src="/js/controller/RoomCtrl.js"></script>
 <script src="/js/service/socket.js"></script>
@@ -46,6 +55,6 @@
 <script src="/js/controller/LoginCtrl.js"></script>
 <script src="/js/controller/NavCtrl.js"></script>
 <script src="/js/service/validator.js"></script>
+<!-- endbuild -->
 
-<!-- end:js -->
 </html>
